@@ -6,12 +6,11 @@
 >- 原文地址：http://aclweb.org/anthology/D/D15/D15-1203.pdf
 ___
 ### Introduction  
-The distant supervision strategy is an effctive method of automatically labeling trainning data. However it has two shortcomings when used for relation extraction.
-  1. the distant supervision assumption is too strong and causes wrong label problem.
+>The distant supervision strategy is an effctive method of automatically labeling >trainning data. However it has two shortcomings when used for relation extraction.
+>  1. the distant supervision assumption is too strong and causes wrong label problem.
+>  2. previous methods have typically applied supervised models to elaborately >designed features when obtained the labeled data through distant supervision. These >errors may lead to error propagation or accumulation.  
 
-    **太容易产生错误的标记。**
-  2. previous methods have typically applied supervised models to elaborately designed features when obtained the labeled data through distant supervision. These errors may lead to error propagation or accumulation.  
-
+  **太容易产生错误的标记。**
   **错误会积累会传播。**
 
 >A sentence is inherently divided into three segments according to the two given entities. The internal context includes the characters inside
