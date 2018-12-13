@@ -81,3 +81,17 @@ the two entities, and the external context involves the characters around the tw
 >In relation extraction, an input sentence that is marked as containing the target entities corresponds only to a relation type; it does not predict labels for each word. Thus, it might be necessary to utilize all local features and perform this prediction globally. When using a neural network, the convolution approach is a natural means of merging all these features (Collobert et al., 2011).
 
 **在关系抽取中，标记为包含目标实体的输入句子仅对应于关系类型; 它不会预测每个单词的标签。因此，可能有必要利用所有局部特征并在全局范围内执行该预测。 当使用神经网络时，卷积方法是合并所有这些特征的自然手段（Collobert等，2011）。**
+
+![卷积](img/paper_01_convolution.png)
+
+权重矩阵w被视作卷积层的过滤器，假设过滤层的长度是3，Rm(m = w * d)
+S = {q1,q2...qs}  ,qi ∈ Rd
+qi:j 是从qi到qj
+权值w和q里的每个w-gram做点积得到另外一个序列 c ∈ Rs+w-1  :  cj = wqj−w+1:j
+![卷积](img/paper_01_c2.png)
+
+## 3.3 Piecewise Max Pooling
+
+![卷积](img/paper_01_piecewiseMaxPooling.png)![卷积](img/paper_01_threeSegments.png)
+单独最大池化隐层减少太快，而且太粗糙，不利于关系的抽取。
+方法是将一层分成三段分别求最大值。
