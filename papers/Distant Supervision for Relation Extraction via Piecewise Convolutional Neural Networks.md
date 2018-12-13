@@ -98,3 +98,4 @@ qi:j 是从qi到qj
 方法是将一层分成三段分别求最大值。**
 
 ## 3.4 Softmax Output
+$\frac{1}{a}$
