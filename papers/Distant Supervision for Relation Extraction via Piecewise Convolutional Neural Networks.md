@@ -93,5 +93,8 @@ qi:j 是从qi到qj
 ## 3.3 Piecewise Max Pooling
 
 ![卷积](img/paper_01_piecewiseMaxPooling.png)![卷积](img/paper_01_threeSegments.png)
-单独最大池化隐层减少太快，而且太粗糙，不利于关系的抽取。
-方法是将一层分成三段分别求最大值。
+
+**单独最大池化隐层减少太快，而且太粗糙，不利于关系的抽取。
+方法是将一层分成三段分别求最大值。**
+
+## 3.4 Softmax Output
