@@ -13,7 +13,7 @@
 ![s1](img/softmax3.png)
 
 ## 3.softmax求导
-![s1](img/softmax4.jpg)
+![qd](img/softmax4.jpg)
 
 ![s1](img/softmax5.png)
 ## 4.softmax VS k个二元分类器
