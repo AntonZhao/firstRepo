@@ -75,3 +75,9 @@ the two entities, and the external context involves the characters around the tw
 >In combined word embeddings and position embeddings, the vector representation part transforms an instance into a matrix S ∈ R s×d , where s is the sentence length and d = dw + dp * 2. The matrix S is subsequently fed into the convolution part.
 
 **结合词向量和位置向量生成的矩阵“喂”给卷积部分。**
+
+## 3.2 Convolution
+
+>In relation extraction, an input sentence that is marked as containing the target entities corresponds only to a relation type; it does not predict labels for each word. Thus, it might be necessary to utilize all local features and perform this prediction globally. When using a neural network, the convolution approach is a natural means of merging all these features (Collobert et al., 2011).
+
+**在关系抽取中，标记为包含目标实体的输入句子仅对应于关系类型; 它不会预测每个单词的标签。因此，可能有必要利用所有局部特征并在全局范围内执行该预测。 当使用神经网络时，卷积方法是合并所有这些特征的自然手段（Collobert等，2011）。**
