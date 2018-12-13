@@ -19,9 +19,9 @@ the two entities, and the external context involves the characters around the tw
 **根据被提供的两个实体，将句子分成三段。实体内部，就是实体本身包括的字符；实体外部就是其他的上下文。**
 
 >The contributions of this paper can be summarized as follows.  
-  - We explore the feasibility of performing distant supervised relation extraction without hand-designed features. PCNNS are proposed to automatically learn features without complicated NLP preprocessing.
-  - To address the wrong label problem, we develop innovative solutions that incorporate multi-instance learning into the PCNNS for distant supervised relation extraction.
-  - In the proposed network, we devise a piecewise max pooling layer, which aims to capture structural information between two entities.
+>  - We explore the feasibility of performing distant supervised relation extraction without hand-designed features. PCNNS are proposed to automatically learn features without complicated NLP preprocessing.
+>  - To address the wrong label problem, we develop innovative solutions that incorporate multi-instance learning into the PCNNS for distant supervised relation extraction.
+>  - In the proposed network, we devise a piecewise max pooling layer, which aims to capture structural information between two entities.
 
 - **不使用手工创建的特征，探索远程监督关系抽取的可行性。不使用复杂NLP手段的情况下，用PCNNS来自动学习特征。**
 - **为了解决错误的标签问题，开发了创新的解决方案，将多实例学习结合PCNNS，用于远程监督关系提取。**
