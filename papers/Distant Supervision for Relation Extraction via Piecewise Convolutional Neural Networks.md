@@ -53,7 +53,7 @@ the two entities, and the external context involves the characters around the tw
 
 **远程监督关系抽取为解决多例问题而制定。在本节中，我们提出了创新的解决方案，将多实例学习结合到卷积神经网络中以完成此任务。 PCNN自动学习特征而无需复杂的NLP处理。 图3显示了我们用于远程监督关系提取的神经网络架构。 它说明了处理一个包实例的过程。 此过程包括四个主要部分：向量表示，卷积，分段最大池和Softmax输出。 我们在下面详细描述这些部分。**
 
-![算法框架图](..\img\paper_01_01.png)
+![算法框架图](img\paper_01_01.png)
 ## 3.1  Vector Representation
 
 >The inputs of our network are raw word tokens. When using neural networks, we typically transform word tokens into low-dimensional vectors. In our method, each input word token is transformed into a vector by looking up pre-trained word embeddings. Moreover, we use position features (PFs) to specify entity pairs, which are also transformed into vectors by looking up position embeddings.
@@ -68,7 +68,7 @@ the two entities, and the external context involves the characters around the tw
 ### 3.1.2  Position Embeddings
 >We use PFs to specify entity pairs. A PF is defined as the combination of the relative distances from the current word to e1 and e2. For instance, in the following example, the relative distances from son to e1 (Kojo Annan) and e2 (Kofi Annan) are 3 and -2, respectively.
 
-![词位置](..\img\paper_01_positionEmbedding.png)
+![词位置](img\paper_01_positionEmbedding.png)
 
 **用位置特征来表示实体对，PF可以定义为当前词关于相邻实体的距离的联合，如上图。**
 
