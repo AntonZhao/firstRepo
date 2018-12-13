@@ -5,7 +5,7 @@
 >- 论文内容：非常经典的文章，分段式的max pooling。后面做的文章都要引用这篇文章。
 >- 原文地址：http://aclweb.org/anthology/D/D15/D15-1203.pdf
 ___
-## Introduction  
+## 1 Introduction  
 >The distant supervision strategy is an effctive method of automatically labeling >trainning data. However it has two shortcomings when used for relation extraction.
 >  1. the distant supervision assumption is too strong and causes wrong label problem.
 >  2. previous methods have typically applied supervised models to elaborately >designed features when obtained the labeled data through distant supervision. These >errors may lead to error propagation or accumulation.  
@@ -27,7 +27,7 @@ the two entities, and the external context involves the characters around the tw
 - **为了解决错误的标签问题，开发了创新的解决方案，将多实例学习结合PCNNS，用于远程监督关系提取。**
 - **设计一个*分段最大池化层*，用来捕获两个实体间的结构信息**
 
-## related work
+## 2  related work
 
 >Performance strongly depends on the quality of the designed features, so most existing studies have concentrated on extracting features to identify the relations between two entities.
 
@@ -48,9 +48,30 @@ the two entities, and the external context involves the characters around the tw
 >The author think NLP work is difficult to get high-quality features in the last of this section, ok, network now.
 **别整着乱七八糟的啦，用神经网络自动学吧。**
 
-## methodology
+## 3  methodology
 >Distant supervised relation extraction is formulated as multi-instance problem. In this section, we present innovative solutions that incorporate multi-instance learning into a convolutional neural network to fulfill this task. PCNNs are proposed for the automatic learning of features without complicated NLP preprocessing. Figure 3 shows our neural network architecture for distant supervised relation extraction. It illustrates the procedure that handles one instance of a bag. This procedure includes four main parts: Vector Representation, Convolution, Piecewise Max Pooling and Softmax Output. We describe these parts in detail below.
 
 **远程监督关系抽取为解决多例问题而制定。在本节中，我们提出了创新的解决方案，将多实例学习结合到卷积神经网络中以完成此任务。 PCNN自动学习特征而无需复杂的NLP处理。 图3显示了我们用于远程监督关系提取的神经网络架构。 它说明了处理一个包实例的过程。 此过程包括四个主要部分：向量表示，卷积，分段最大池和Softmax输出。 我们在下面详细描述这些部分。**
 
+![算法框架图](..\img\paper_01_01.png)
 ## 3.1  Vector Representation
+
+>The inputs of our network are raw word tokens. When using neural networks, we typically transform word tokens into low-dimensional vectors. In our method, each input word token is transformed into a vector by looking up pre-trained word embeddings. Moreover, we use position features (PFs) to specify entity pairs, which are also transformed into vectors by looking up position embeddings.
+
+**需要将输入的词转换成向量，并且通过嵌入的位置生成位置特征指定实体对**
+
+### 3.1.1 Word Embeddings
+>A common method of training a neural network is to randomly initialize all parameters and then optimize them using an optimization algorithm. Recent research (Erhan et al., 2010) has shown that neural networks can converge to better local minima when they are initialized with word embeddings. Word embeddings are typically learned in an entirely unsupervised manner by exploiting the co-occurrence structure of words in unlabeled text. Researchers have proposed several methods of training word embeddings (Bengio et al., 2003; Collobert et al., 2011; Mikolov et al., 2013). In this paper, we use the Skip-gram model (Mikolov et al., 2013) to train word embeddings.
+
+**神经网络使用【词嵌入初始化】可以收敛到局部最小值。使用skip-gram模型来训练词嵌入。**
+
+### 3.1.2  Position Embeddings
+>We use PFs to specify entity pairs. A PF is defined as the combination of the relative distances from the current word to e1 and e2. For instance, in the following example, the relative distances from son to e1 (Kojo Annan) and e2 (Kofi Annan) are 3 and -2, respectively.
+
+![词位置](..\img\paper_01_positionEmbedding.png)
+
+**用位置特征来表示实体对，PF可以定义为当前词关于相邻实体的距离的联合，如上图。**
+
+>In combined word embeddings and position embeddings, the vector representation part transforms an instance into a matrix S ∈ R s×d , where s is the sentence length and d = dw + dp * 2. The matrix S is subsequently fed into the convolution part.
+
+**结合词向量和位置向量生成的矩阵“喂”给卷积部分。**
