@@ -31,6 +31,7 @@ plt.show()
 
 #Select the linear model
 model = sklearn.linear_model.LinearRegression()
+#model = sklearn.neighbors.KNeighborsRegressor(n_neighbors=3)
 
 #Train the model
 model.fit(x,y)
