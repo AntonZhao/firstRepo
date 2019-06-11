@@ -1,5 +1,6 @@
 #!/bin/bash
 # ffmpeg -i input.mp4 output.avi
+#感谢https://crazybunqnq.com/2018/02/06/ConvertVideos
 echo "当前正在使用 $SHELL 执行脚本..."
 # 视频路径
 path=$1
